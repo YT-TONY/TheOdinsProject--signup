@@ -7,10 +7,10 @@
 @font-face {
     font-family: 'NicoMoji-Regular';
     src: url('fonts/NicoMoji-Regular.woff') format('woff'),
-         url('fonts/') format('truetype');
+         url('fonts/NicoMoji-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: swap; /* helps with loading performance */
 }
 
 :root{
@@ -27,9 +27,13 @@ body{
     font-family: var(--font-family);
     background-color: var(--bg-color);
     color: var(--text-color);
+    margin: 0;
+    min-height: 100vh;
 }
 .form{
     display: flex;
+    width:100vw;
+    height: 100vh;
 }
 .sidebar{
     width: 40vw;
@@ -43,19 +47,107 @@ body{
     object-fit: cover;
 }
 .hero-text{
-    background-color: hsla(29, 19%, 48%, 0.329);
-    padding: 2rem 2rem;
+    background-color: hsla(0, 0%, 0%, 0.315);
+    padding: 0.5rem;
     font-size: 2.5rem;
     position: absolute;
-    width: 90%;
+    display: flex;
+    width: 100%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     white-space: nowrap;
-    color: #333333be;
-    top: 30%;
+    top: 20%;
     left: 50%;
 }
 .hero-text h2{
-    color: var(--bg-color);
+    font-weight: 300;
+    font-size: 1.3em;
+    color: hsla(0, 0%, 96%, 0.781);
     font-family: var(--side-text);
+    letter-spacing: 0.2em;
+    
+}
+.hero-text img{
+    opacity: 90%;
+    display: inline;
+    width: 150px;
+    height:100px;
+    margin-bottom: 1rem;
+}
+
+.container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+
+}
+
+.form-container h2{
+    font-family: var(--side-text);
+    font-weight: 300;
+    font-size: 3em;
+    color: hsla(0, 0%, 0%, 0.404);
+    letter-spacing: 0.2em;
+    padding: 50px;
+    margin-bottom:8%;
+}
+
+.correct-div{
+    display: flex;
+    align-self: center;
+    background-color: #ffffff;
+    padding: 30px;
+
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.correct-div form{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+    width: 100%;
+}
+
+input{
+    width: 100%;
+    border: 2px solid hsla(0, 0%, 0%, 0.315);
+    border-radius: var(--border-radius);
+    height: 1.5rem; 
+    padding: var(--border-radius);
+}
+
+.form-group label{
+    font-size: 0.8em;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.container button{
+    background-color: #B6B09F;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 15px;
+    width: 200px;
+    height: 54;
+    border: none;
+    border-radius: 15px;
+    margin: 30px;
+}
+
+.container a{
+    text-decoration: none;
+    color: hsla(0, 0%, 0%, 0.685);
+    font-weight: bold;
+    margin-left: 30px;
+}
+.container a span{
+    color: #B6B09F;
 }
